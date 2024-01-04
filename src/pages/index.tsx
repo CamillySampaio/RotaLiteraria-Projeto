@@ -1,118 +1,188 @@
+import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import rosadosventos from '@/styles/images/rosadosventos.png'
+import funkopop from '@/styles/images/funkopop.jpeg';
+import Head from 'next/head';
+import card1 from '@/styles/images/card1.png';
+import card2 from '@/styles/images/card2.png';
+import card3 from '@/styles/images/card3.png';
+import { Card } from '@/components';
 
-const inter = Inter({ subsets: ['latin'] })
+
+
 
 export default function Home() {
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <Head>
+      <title> Rota Literária </title>
+    </Head>
+    
+    <div className="min-h-screen bg-white flex flex-col justify-between">
+    <header className="bg-gray-100 shadow-md">
+      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <nav className="-mb-px flex flex-col sm:flex-row justify-between space-x-8 sm:items-center" aria-label="Tabs">
+          <div className="flex items-center space-x-4">
+            <div className="relative w-12 h-12 mr-4">
+             
+              <Link href="/"> <Image className="absolute object-cover w-full h-full rounded-full" src={rosadosventos} alt="Slogan rosa dos ventos" /></Link>
+
+            </div>
+            <h1 className="text-2xl font-bold text-indigo-700">Rota Literária</h1>
+          </div>
+
+          <div className='flex space-x-8 sm:justify-center sm:flex-grow'>
+            <Link href="/produtos" passHref>
+              <div className="border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg link link-underline link-underline-black text-black">Produtos</div>
+            </Link>
+
+            <Link href="/vendas" passHref>
+              <div className="border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg link link-underline link-underline-black text-black">Vendas</div>
+            </Link>
+
+            <Link href="/trocas" passHref>
+              <div className="border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg link link-underline link-underline-black text-black">Trocas</div>
+            </Link>
+          </div>
+          
+
+          <div className='flex space-x-8'>
+            <Link href="/login" passHref>
+              <div className="inline-block text-white font-bold py-2 px-4 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 border border-transparent transform hover:scale-110 hover:border-white transition-transform duration-3000 ease-in-out">Login</div>
+            </Link>
+          </div>
+        </nav>
+      </div>
+        </header>
+
+<br />
+        
+        <main className="flex-1">
+        <div className="bg-white relative flex items-center justify-center overflow-hidden z-50">
+      <div className="relative mx-auto h-full px-4 pb-20 md:pb-10 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
+        <div className="flex flex-col items-center justify-between lg:flex-row py-16">
+          <div className="relative">
+            <div className="lg:max-w-xl lg:pr-5 relative z-40">
+
+              <h2 className="mb-6 max-w-lg text-5xl font-light leading-snug tracking-tight text-g1 sm:text-7xl sm:leading-snug">
+                Encare o mundo dos
+                <span className="my-1 inline-block border-b-8 border-g4 bg-white px-4 font-bold text-g4">Livros</span>
+              </h2>
+              <p className="text-base text-gray-700">Compre, venda e troque livros em nosso site.</p>
+              <p className="text-base text-gray-700">Uma plataforma ampla para amantes do mundo literário.</p>
+              <div className="mt-10 flex flex-col items-center md:flex-row">
+                <Link href="/" className="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-green-600 px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-blue-800 focus:outline-none md:mr-4 md:mb-0 md:w-auto">
+                  Cadastre-se
+                </Link>
+                
+                <Link href="/" aria-label="" className="group inline-flex items-center font-semibold text-g1">
+                  Saiba mais                  
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative hidden lg:ml-32 lg:block lg:w-1/2">
+            <div className="mx-auto w-fit overflow-hidden rounded-[6rem] rounded-br-none rounded-tl-none animated-image">
+              <Image src={funkopop} alt="" />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="hidden text-9xl varien absolute top-6 left-1/4 text-g/10 z-40">
+        About Us
       </div>
+      
+    </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+    <br />
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+    <div className='items-center font-bold text-indigo-800 text-center text-size'> {/* Ajuste o tamanho da fonte com a classe text-xl */}
+  <p> Acesse o Rota Literária </p>
+</div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-wrap -m-4">
+          <Card
+            title="Compre"
+            description="Compre diversos livros vendidos por editoras ou por usuários do site, de diversos gêneros e diveros autores."
+            imageSrc={card1}
+            gradientFrom="indigo-50"
+            gradientTo="blue-50"
+          /> 
+          <Card
+            title="Venda"
+            description="Venda livros ocupando espaço na sua plateleira na nossa plataforma, garantimos uma venda segura."
+            imageSrc={card2}
+            gradientFrom="pink-50"
+            gradientTo="red-50"
+          />
+          <Card
+            title="Troque"
+            description="Quer muito ler um livro em específico e tem livros sobrando na prateleira? Troque com leitores de todo o Brasil."
+            imageSrc={card3}
+            gradientFrom="fuchsia-50"
+            gradientTo="pink-50"
+          />
+        </div>
       </div>
-    </main>
-  )
+    </section>
+
+    {/* <section className="bg-white">
+      <div className="container px-6 py-8 mx-auto">
+        <div className="lg:flex lg:-mx-2">
+          <div className="space-y-3 lg:w-1/5 lg:px-2 lg:space-y-4">
+            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Jackets & Coats</a>
+            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Hoodies</a>
+            <a href="#" className="block font-medium text-blue-600 dark:text-blue-500 hover:underline">T-shirts & Vests</a>
+            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Shirts</a>
+            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Blazers & Suits</a>
+            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Jeans</a>
+            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Trousers</a>
+            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Shorts</a>
+            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Underwear</a>
+          </div>
+
+          <div className="mt-6 lg:mt-0 lg:px-2 lg:w-4/5 ">
+            <div className="flex items-center justify-between text-sm tracking-widest uppercase ">
+              <p className="text-gray-500 dark:text-gray-300">6 Items</p>
+              <div className="flex items-center">
+                <p className="text-gray-500 dark:text-gray-300">Sort</p>
+                <select className="font-medium text-gray-700 bg-transparent dark:text-gray-500 focus:outline-none">
+                  <option value="#">Recommended</option>
+                  <option value="#">Size</option>
+                  <option value="#">Price</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> */}
+
+
+        </main>
+
+      
+        <footer className="bg-gray-100 shadow">
+          <div className="container mx-auto py-4 flex justify-between items-center">
+            <div>
+              <Image src={rosadosventos} alt="rosa dos ventos logo" priority className="h-36 w-36" />
+            </div>
+            <div className="text-indigo-800 text-xl">
+              Desenvolvido por Camilly Lima Sampaio
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
+ );
 }
