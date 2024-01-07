@@ -7,10 +7,37 @@ import Head from 'next/head';
 import ValidaCpf from "@/components/Validacpf";
 import validarEmail from "@/components/Email";
 import validarCep from '@/components/Cep';
-import Alerta from '@/components/alert';
+import Swal from 'sweetalert2';
+import SenhaValidacao from '@/components/ValidaSenha';
 
 
 export default function Cadastro () {
+
+  const handleConfirm = async () => {
+  
+
+    Swal.fire({
+      title: "Você confirma todas as informações?",
+      showDenyButton: true,
+      confirmButtonText: "Sim",
+      denyButtonText: `Não`
+    }).then((result) => {
+      if (result.isConfirmed) {
+       
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 3000);
+    
+       
+        Swal.fire("Redirecionando...", "", "success");
+      } else if (result.isDenied) {
+        
+        setTimeout(() => {
+          Swal.fire("Reveja as informações", "", "info");
+        }, );
+      }
+    });}
+  
 
 const [cpfValido, setCpfValido] = useState(true);
 
@@ -34,6 +61,7 @@ const [formData, setFormData] = useState({
   Numero:"",
 });
 
+
 const atualizarForm = (e: React.ChangeEvent<HTMLInputElement>) => {
   const { name, value } = e.target;
 
@@ -50,50 +78,24 @@ const atualizarForm = (e: React.ChangeEvent<HTMLInputElement>) => {
   if (name === "CEP") {
     const cepValido = validarCep(value);
     setCepValido(cepValido);
-  }
-
+  }  
   
-
- 
-
-
-  setFormData((prevData) => ({
+ setFormData((prevData) => ({
     ...prevData,
     [name]: value,
   }));
 };
 
+
 const enviarForm = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault(); 
-  
-  if (formData.Senha !== formData.ConfirmaSenha) {
-    alert("As senhas não coincidem. Corrija antes de prosseguir.");
-    return;
-  }
-
-
-  if (
-    formData.Nome.trim() === "" ||
-    formData.CPF.trim() === "" ||
-    formData.Email.trim() === "" ||
-    formData.Senha.trim() === "" ||
-    formData.ConfirmaSenha.trim() === "" || 
-    formData.Senha === formData.ConfirmaSenha ||
-    formData.CEP.trim() === "" ||
-    formData.Estado.trim() === "" ||
-    formData.Cidade.trim() === "" ||
-    formData.Bairro.trim() === "" ||
-    formData.Rua.trim() === "" ||
-    formData.Numero.trim() === ""
-  ) {
-    alert("Preencha todos os campos obrigatórios corretamente.");
-    return;
-  }
 
   Router.push('/login');
+
 };
 
 
+ 
 
     return (
       <>
@@ -150,12 +152,14 @@ const enviarForm = async (e: React.FormEvent<HTMLFormElement>) => {
           cpfValido ? "" : "border-red-500"
         }`}
       />
-      {!cpfValido && (
+      
+    </div>
+
+{!cpfValido && (
                   <p className="text-red-500">
                     CPF inválido.
                   </p>
                 )}
-    </div>
 
     <div className="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
       <input
@@ -170,12 +174,14 @@ const enviarForm = async (e: React.FormEvent<HTMLFormElement>) => {
           cpfValido ? "" : "border-red-500"
         }`}
       />
-      {!EmailValido && (
+      
+    </div>
+    
+    {!EmailValido && (
                   <p className="text-red-500">
                     Email inválido.
                   </p>
                 )}
-    </div>
 
     <div className="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
       <input
@@ -191,8 +197,6 @@ const enviarForm = async (e: React.FormEvent<HTMLFormElement>) => {
       
     </div>
 
-   
-
     <div className="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
       <input
         type="password"
@@ -204,13 +208,9 @@ const enviarForm = async (e: React.FormEvent<HTMLFormElement>) => {
         placeholder="Confirme sua senha"
         className="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none"
       />
-    </div>
-    
-    {erroDeSenha && (
-                <p className="text-red-500">
-                  As senhas não coincidem. Por favor, tente novamente.
-                </p>
-              )}
+  
+
+    </div><SenhaValidacao senha={formData.Senha} confirmaSenha={formData.ConfirmaSenha} />
 
     <div className='items-center font-bold text-indigo-800 text-center text-xl'>
       <p>Localização</p>
@@ -228,6 +228,12 @@ const enviarForm = async (e: React.FormEvent<HTMLFormElement>) => {
         className="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none"
       />
     </div>
+
+    {!cepValido && (
+                  <p className="text-red-500">
+                    CEP inválido.
+                  </p>
+                )}
 
     <div className="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
       <label
@@ -325,7 +331,7 @@ const enviarForm = async (e: React.FormEvent<HTMLFormElement>) => {
     </div>
 
     <button className="transform rounded-sm bg-indigo-600 py-2 font-bold text-white duration-300 hover:bg-indigo-400" 
-            onClick={enviarForm}>
+            onClick={handleConfirm}>
       Criar conta
     </button>
 

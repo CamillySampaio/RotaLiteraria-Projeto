@@ -50,6 +50,63 @@ export default function Trocas () {
       </div>
         </header>
 
+        <main>
+          <section className="bg-white dark:bg-white py-10">
+
+           <div className='items-center font-bold text-indigo-800 text-center text-size'> 
+              <p> Requisitos Para troca  </p>
+          </div>
+
+          <br />
+          <br />
+          <br />
+
+          <div className="container mx-auto p-4">
+          <table className="min-w-full bg-white shadow-md rounded-xl">
+      <thead>
+        <tr className="bg-blue-gray-100 text-gray-700">
+          <th className="py-3 px-4 text-left">Gênero</th>
+          <th className="py-3 px-4 text-left">Localização</th>
+          <th className="py-3 px-4 text-left">Quantidade de trocas</th>
+        </tr>
+      </thead>
+      <tbody className="text-blue-gray-900">
+        <tr className="border-b border-blue-gray-200">
+          <td className="py-3 px-4">Romance</td>
+          <td className="py-3 px-4">Brasil</td>
+          <td className="py-3 px-4">Ilimitado</td>
+        </tr>
+        <tr className="border-b border-blue-gray-200">
+          <td className="py-3 px-4">Fantasia</td>
+          <td className="py-3 px-4">Brasil</td>
+          <td className="py-3 px-4">Ilimitado</td>
+        </tr>
+        <tr className="border-b border-blue-gray-200">
+          <td className="py-3 px-4">Biografia</td>
+          <td className="py-3 px-4">Brasil</td>
+          <td className="py-3 px-4">Ilimitado</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div>
+ <p className="font-bold text-indigo-800 text-lg">Atenção:</p> <p> Quando a função troca estiver disponível, todo o dialogo de troca deve ser feito entre os usuários, o Rota Literária não se responsabiliza por transações indevidas. </p>
+
+    </div>
+    </div>
+         </section>
+        </main>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
         <footer className="bg-gray-100 shadow-md">
       <div className="container mx-auto py-4 flex justify-between items-center">
         <div>

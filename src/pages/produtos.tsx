@@ -6,6 +6,11 @@ import funkopop from '@/styles/images/funkopop.jpeg';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import CardsLivros from '@/components/CardsLivros';
+import Caraval from '@/styles/images/caraval.jpg'
+import ouabh from '@/styles/images/ouabh.jpg'
+import verity from '@/styles/images/verity.jpg'
+import pequenoprince from '@/styles/images/pequenoprince.jpg'
 
 export default function Produtos () {
 
@@ -48,7 +53,50 @@ export default function Produtos () {
       </div>
         </header>
 
-        <main></main>
+        <main>
+
+        <section className="bg-white dark:bg-white py-10">
+
+          <div className='items-center font-bold text-indigo-800 text-center text-size'> 
+          <p> Produtos </p>
+        </div>
+
+
+      <div className="container px-6 py-10 mx-auto">
+        <div className="lg:flex lg:-mx-2">
+
+        
+                  
+
+            <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+              
+              <CardsLivros
+                imageSrc={Caraval}
+                title="Caraval"
+                price="R$49,99"
+              />
+              <CardsLivros
+                imageSrc={ouabh}
+                title="Era uma vez um coração partido"
+                price="R$59,99"
+              />
+              <CardsLivros
+                imageSrc={verity}
+                title="Verity"
+                price="R$39,99"
+              />
+              <CardsLivros
+                imageSrc={pequenoprince}
+                title="O Pequeno Principe"
+                price="R$15,99"
+              />
+              
+            </div>
+          </div>
+        </div>
+  
+    </section>
+        </main>
 
         <footer className="bg-gray-100 shadow-md">
       <div className="container mx-auto py-4 flex justify-between items-center">

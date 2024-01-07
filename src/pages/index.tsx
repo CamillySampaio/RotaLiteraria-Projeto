@@ -73,7 +73,7 @@ export default function Home() {
               <p className="text-base text-gray-700">Compre, venda e troque livros em nosso site.</p>
               <p className="text-base text-gray-700">Uma plataforma ampla para amantes do mundo literário.</p>
               <div className="mt-10 flex flex-col items-center md:flex-row">
-                <Link href="/" className="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-green-600 px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-blue-800 focus:outline-none md:mr-4 md:mb-0 md:w-auto">
+                <Link href="/cadastro" className="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-green-600 px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-blue-800 focus:outline-none md:mr-4 md:mb-0 md:w-auto">
                   Cadastre-se
                 </Link>
                 
@@ -100,7 +100,7 @@ export default function Home() {
 
     <br />
 
-    <div className='items-center font-bold text-indigo-800 text-center text-size'> {/* Ajuste o tamanho da fonte com a classe text-xl */}
+    <div className='items-center font-bold text-indigo-800 text-center text-size'>
   <p> Acesse o Rota Literária </p>
 </div>
 
@@ -131,42 +131,6 @@ export default function Home() {
         </div>
       </div>
     </section>
-
-    {/* <section className="bg-white">
-      <div className="container px-6 py-8 mx-auto">
-        <div className="lg:flex lg:-mx-2">
-          <div className="space-y-3 lg:w-1/5 lg:px-2 lg:space-y-4">
-            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Jackets & Coats</a>
-            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Hoodies</a>
-            <a href="#" className="block font-medium text-blue-600 dark:text-blue-500 hover:underline">T-shirts & Vests</a>
-            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Shirts</a>
-            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Blazers & Suits</a>
-            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Jeans</a>
-            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Trousers</a>
-            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Shorts</a>
-            <a href="#" className="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Underwear</a>
-          </div>
-
-          <div className="mt-6 lg:mt-0 lg:px-2 lg:w-4/5 ">
-            <div className="flex items-center justify-between text-sm tracking-widest uppercase ">
-              <p className="text-gray-500 dark:text-gray-300">6 Items</p>
-              <div className="flex items-center">
-                <p className="text-gray-500 dark:text-gray-300">Sort</p>
-                <select className="font-medium text-gray-700 bg-transparent dark:text-gray-500 focus:outline-none">
-                  <option value="#">Recommended</option>
-                  <option value="#">Size</option>
-                  <option value="#">Price</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-             
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> */}
 
 
         </main>

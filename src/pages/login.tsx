@@ -15,7 +15,7 @@ export default function Login () {
     <Head>
       <title> Entrar | Rota Literária </title>
     </Head>
-      <header className="bg-gray-100 shadow">
+    <header className="bg-gray-100 shadow-md">
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <nav className="-mb-px flex flex-col sm:flex-row justify-between space-x-8 sm:items-center" aria-label="Tabs">
           <div className="flex items-center space-x-4">
@@ -28,6 +28,7 @@ export default function Login () {
       </div>
         </header>
       
+      <br />
 
   <main className="mx-auto flex min-h-screen w-full items-center justify-center bg-white text-black">
     <section className="flex w-[30rem] flex-col space-y-10">
